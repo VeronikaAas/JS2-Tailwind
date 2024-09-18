@@ -1,6 +1,6 @@
 // Use Postman, or JavaScript to get your API key
 // In Workflow we will learn how to secure this information
-export const API_KEY = "replace-with-your-key";
+export const API_KEY = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
 
 export const API_BASE = "https://v2.api.noroff.dev";
 
@@ -17,3 +17,5 @@ export const API_SOCIAL = `${API_BASE}/social`;
 export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
 
 export const API_SOCIAL_PROFILES = `${API_SOCIAL}/profiles`;
+
+export const API_ENDPOINT_NAME = "/verothero"; 

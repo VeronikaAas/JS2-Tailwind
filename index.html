@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noroff FED2 JS2 CA</title>
   <script type="module" src="/src/app.js"></script>
+  <script type="module" src="/src/js/api/headers.js"></script>
 </head>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+<header>
+  <img src="#" alt="Noroff Logo" />
 
   <h1>Home</h1>
 
@@ -18,5 +19,23 @@
   <a href="/auth/login/">Login</a>
   <a href="/auth/register/">Register</a>
   <button>Logout</button>
-</body>
+</header>
+<main>
+  <h1>Login</h1>
+    <form name="login">
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+
+      <a href="/auth/register/">Register</a>
+      <button>Login</button>
+    </form>
+</main>
+
 </html>

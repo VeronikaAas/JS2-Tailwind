@@ -1,11 +1,15 @@
-import { API_KEY } from "./constants";
+import { API_BASE, API_KEY } from "./constants.js";
 
-export function headers() {
-  const headers = new Headers();
 
-  if (API_KEY) {
-    headers.append("X-Noroff-API-Key", API_KEY);
+export async function headers() {
+  const options = {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "X-Noroff-API-Key": API_KEY,
+      "Content-Type": "application/json"
+    }
   }
-
-  return headers;
+  
+  const response = await fetch(`${API_BASE}/social/posts`, options)
+  const data = await response.json()
 }
