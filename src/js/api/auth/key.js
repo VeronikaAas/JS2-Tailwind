@@ -1,6 +1,6 @@
 import { API_KEY } from '../constants.js'; 
 
-fetch('https://v2.api.noroff.dev/social/posts', {
+fetch('https://v2.api.noroff.dev/social/posts/verothero', {
   method: 'GET',
   headers: {
     'Authorization': `Bearer ${accessToken}`, 

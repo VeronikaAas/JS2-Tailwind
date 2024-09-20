@@ -3,14 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>Tell everyone about your workout!</title>
+    <script type="module" src="/src/js/api/post/create.js"></script>
   </head>
   <body>
     <h1>Create Post</h1>
 
     <form name="createPost">
-      
+      <div>
+        <label for="Title">Title</label>
+        <input id="title" type="title" name="title" required />
+      </div>
+      <div>
+        <label for="describe">Describe your workout</label>
+        <input id="describe" type="describe" name="describe" required />
+      </div>
+      <div class="media">
+        <label for="">Media</label>
+        <input id="mediaURL" type="url" name="mediaURL" required title="This is where you put in your image url.">
+      </div>
+      <div>
+        <input type="radio" id="weightlifting" name="category" value="weightlifting">
+        <label for="weightlifting">Weightlifting</label>
+        <input type="radio" id="running" name="category" value="running">
+        <label for="running">Running</label>
+        <input type="radio" id="walking" name="category" value="walking">
+        <label for="walking">Walking</label>
+        <input type="radio" id="cycling" name="category" value="cycling">
+        <label for="cycling">Cycling</label>
+      </div>
       <button>Create Post</button>
     </form>
   </body>
