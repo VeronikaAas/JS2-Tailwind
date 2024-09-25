@@ -4,7 +4,7 @@ fetch('https://v2.api.noroff.dev/social/posts/verothero', {
   method: 'GET',
   headers: {
     'Authorization': `Bearer ${accessToken}`, 
-    'X-Noroff-API-Key': API_KEY, // Legg til API-nøkkelen her
+    'X-Noroff-API-Key': API_KEY, 
     'Content-Type': 'application/json'
   }
 })
