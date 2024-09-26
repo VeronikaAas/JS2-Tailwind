@@ -1,4 +1,4 @@
-import { API_BASE, API_KEY } from "./constants.js";
+import { API_KEY } from "./constants.js";
 import { load } from "./storage/load.js";
 
 export function headers(hasBody = false) {
@@ -6,7 +6,7 @@ export function headers(hasBody = false) {
   const token = load("token");
 
   if (token) {
-    headers.append("Authorization", `Bearer ${load("token")}`)
+    headers.append("Authorization", `Bearer ${token}`)
   }
 
   if (API_KEY) {
@@ -14,7 +14,7 @@ export function headers(hasBody = false) {
   }
 
   if (hasBody) {
-    headers.append("Content-Type", "applic<tion/json")
+    headers.append("Content-Type", "application/json")
   }
 
   return headers; 

@@ -1,21 +1,33 @@
-import { API_BASE, API_ENDPOINT_NAME, API_SOCIAL_POSTS } from "../constants.js"
+import { API_SOCIAL_POSTS } from "../constants";
+import { headers } from "../headers";
 
-const method = "post";
+export async function createPost({ title, body, tags, media }) {
+  const bodyElement = {
+    title: title,
+    body: body,
+    tags: tags,
+    media: media,
+  };
 
-export async function createPost(postData) {
-    const createPostURL = API_BASE + API_SOCIAL_POSTS + API_ENDPOINT_NAME;
-    
-    const response = await authFetch(createPostURL, {
-        method,
-        body: JSON.stringify(postData)
+  try {
+    const response = await fetch(API_SOCIAL_POSTS, {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify(bodyElement),
+    });
+    console.log("Response:", response);
+
+    console.log("inside headers:");
+    headers().forEach((element) => {
+      console.log(element);
     });
 
     if (response.ok) {
-        alert("You have created a post!");
-        window.location.href = `/index.html`
-    } else {
-        alert("We couldn't create your post, please try again.")
+      alert("You created a post!");
+      window.location.href = "/profile/";
     }
-
-    return await response.json();
+  } catch (error) {
+    alert("Something went wrong trying to create a post!");
+    console.log(error);
+  }
 }
