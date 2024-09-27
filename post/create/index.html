@@ -1,37 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tell everyone about your workout!</title>
-    <script type="module" src="/src/js/api/post/create.js"></script>
+    <title>Create your post</title>
+    <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Create Post</h1>
+  <body class="flex flex-col h-100">
+    <h1 class="text-center">Create Post</h1>
 
-    <form name="createPost">
-      <div>
-        <label for="Title">Title</label>
-        <input id="title" type="title" name="title" required />
+    <form name="createPost" class="flex flex-col items-center">
+      <div class="formContainers">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="" />
       </div>
-      <div>
-        <label for="describe">Describe your workout</label>
-        <input id="describe" type="describe" name="describe" required />
+
+      <div class="formContainers">
+        <label for="text">Text</label>
+        <textarea name="text" id="postText"></textarea>
       </div>
-      <div class="media">
-        <label for="">Media</label>
-        <input id="mediaURL" type="url" name="mediaURL" required title="This is where you put in your image url.">
+
+      <div class="formContainers">
+        <label for="media">Image url</label>
+        <input type="url" name="url" />
       </div>
-      <div>
-        <input type="radio" id="weightlifting" name="category" value="weightlifting">
-        <label for="weightlifting">Weightlifting</label>
-        <input type="radio" id="running" name="category" value="running">
-        <label for="running">Running</label>
-        <input type="radio" id="walking" name="category" value="walking">
-        <label for="walking">Walking</label>
-        <input type="radio" id="cycling" name="category" value="cycling">
-        <label for="cycling">Cycling</label>
+
+      <div class="formContainers">
+        <label for="media">Image alt</label>
+        <input type="text" name="alt" />
       </div>
+
+      <div class="formContainers">
+        <label for="tags">tags</label>
+        <input type="text" name="tags" />
+      </div>
+
       <button>Create Post</button>
     </form>
   </body>

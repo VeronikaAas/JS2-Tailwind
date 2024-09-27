@@ -1,3 +1,8 @@
 export function load(key) {
-    return JSON.parse(localStorage.getItem(key));
+    try {
+        const value = localStorage.getItem(key);
+        return JSON.parse(value);
+    } catch (error) {
+        return null; 
+    }
 }

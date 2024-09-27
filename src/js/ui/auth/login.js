@@ -1,4 +1,5 @@
 import { login } from "../../api/auth/login.js";
+
 export async function onLogin(event) {
     event.preventDefault();
     const form = event.target;
@@ -7,8 +8,11 @@ export async function onLogin(event) {
 
     try {
         await login(account)
+        console.log("Success");
+        window.location.href = '/';
         
     } catch (error) {
+        console.error("Could not login user", error);
         
     }
 }

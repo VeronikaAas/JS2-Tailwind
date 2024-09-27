@@ -1,35 +1,17 @@
-import { API_KEY } from "./constants.js";
-import { load } from "./storage/load.js";
+import { API_KEY } from "./constants";
 
-export function headers(hasBody = false) {
+export function headers() {
   const headers = new Headers();
-  const token = load("token");
-
-  if (token) {
-    headers.append("Authorization", `Bearer ${token}`)
-  }
 
   if (API_KEY) {
-    headers.append("X-Noroff_API-Key", API_KEY)
+    headers.append("X-Noroff-API-Key", API_KEY);
   }
 
-  if (hasBody) {
-    headers.append("Content-Type", "application/json")
+  if (localStorage.token) {
+    const token = "Bearer " + JSON.parse(localStorage.getItem("token"));
+    headers.append("Authorization", token);
   }
+  headers.append("content-Type", "application/json");
 
-  return headers; 
-
+  return headers;
 }
-
-
-
-//export async function headers() {
-  //const options = {
-    //headers: {
-      //'Authorization': `bearer ${load("token")}`,
-      //'X-Noroff-API-Key': API_KEY
-    //}
-  
-  //const response = await fetch(`${API_BASE}/social/posts`, API_KEY, options)
-  //const data = await response.json()
-//}
