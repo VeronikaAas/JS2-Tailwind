@@ -45,6 +45,7 @@ export async function readPosts(limit = 12, page = 1) {
   }
 }
 
+
 export async function readPostsByUser(username, limit = 12, page = 1) {
   const queryParameters = `?limit=${limit}&page=${page}&_author=true&_reactions=true&_comments=true`;
   try {

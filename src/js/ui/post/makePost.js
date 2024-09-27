@@ -1,4 +1,6 @@
+alert("JAVASCRIPT")
 import { onDeletePost } from "./delete";
+
 
 export const makePost = (userPosts, id) => {
   const outerContainer = document.getElementById(id);
