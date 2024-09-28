@@ -19,7 +19,7 @@ The site is built with:
 <li>HTML</li>
 <li>Next to nothing CSS</li>
 <li>Vite</li>
-<li>API for Back-End Operations</li>
+<li>API for Back-End Operations</li><br>
 
 Getting Started Installing: <br>
 Clone the repository using HTTPS: git clone https://github.com/NoroffFEU/fed2-js2-ca-VeronikaAas<br>
