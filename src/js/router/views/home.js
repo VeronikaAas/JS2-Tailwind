@@ -1,11 +1,12 @@
 import { authGuard } from "../../utilities/authGuard";
 import { renderPosts } from "../../ui/post/read";
-import { setLogoutListener } from "../../ui/global/logout";
+
 
 authGuard();
 
-document.addEventListener('DOMContentLoaded', () => {
-  setLogoutListener();
-});
-
 renderPosts();
+
+// Vent på at DOM-en er klar
+//document.addEventListener("DOMContentLoaded", () => {
+    //setLogoutListener(); // Sett opp logout-lister
+//});

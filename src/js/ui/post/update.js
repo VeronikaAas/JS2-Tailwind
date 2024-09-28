@@ -1,6 +1,5 @@
 import { updatePost } from "../../api/post/update";
-import { findPostID } from "../../utilities/findPostID";
-import { setMediaObject, stringToArray } from "../../utilities/extra";
+import { setMediaObject, stringToArray, findPostID } from "../../utilities/extra";
 
 export async function onUpdatePost(event) {
     event.preventDefault();
