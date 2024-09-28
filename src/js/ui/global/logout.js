@@ -1,10 +1,11 @@
 import { remove } from "../../api/storage/remove";
 
 export function setLogoutListener() {
-    const logoutButton = document.getElementById("logout");
+    const logoutButton = document.getElementById("logoutButton");
     logoutButton.addEventListener("click", () => {
         remove("token");
         remove("profile");
-        window.location.href="auth/login/index";
-    })
+        alert("You have been logged out.");
+        window.location.href = "auth/login/index";
+    });
 }

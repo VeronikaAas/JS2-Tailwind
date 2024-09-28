@@ -1,7 +1,8 @@
 export function onLogout() {
-    console.log("click");
-  
-    localStorage.removeItem("userinfo");
-    localStorage.removeItem("token");
-    window.location.href = "/auth/login/";
-  }
+  console.log("click");
+
+  remove("userinfo");
+  remove("token");
+  alert("You have been logged out.");
+  window.location.href = "/auth/login/";
+}

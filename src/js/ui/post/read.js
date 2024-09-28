@@ -1,6 +1,6 @@
 import { readPost, readPosts, readPostsByUser } from "../../api/post/read";
 import { postsTemplate } from "../templates/postsTemplate";
-import { findPostID } from "../../utilities/findPostID";
+import { findPostID } from "../../utilities/extra";
 import { singlePostTemplate } from "../templates/singlePostTemplate";
 import { load } from "../../api/storage/load";
 
