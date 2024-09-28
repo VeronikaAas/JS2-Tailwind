@@ -1,75 +1,58 @@
-import { headers } from "../headers";
-import { API_SOCIAL_POSTS } from "../constants";
+import { authFetch } from "../authFetch";
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants";
 
-export async function readPost(id) {
-  const queryParameters = `?&_author=true&_reactions=true&_comments=true`;
-  try {
-    const response = await fetch(
-      API_SOCIAL_POSTS + "/" + id + queryParameters,
-      {
-        method: "GET",
-        headers: headers(),
-      }
-    );
-
-    if (response.ok) {
-      const data = await response.json();
-      const post = data.data;
-      console.log("single post:", post);
-      return post;
+export async function readPost(id, includeAuthor = true) {
+    if (!id) {
+        throw new Error("Read requires a post ID");
     }
-  } catch (error) {
-    alert("something went wrong trying to fetch the post");
-    console.log("error:", error);
-  }
-}
 
-export async function readPosts(limit = 12, page = 1) {
-  const queryParameters = `?limit=${limit}&page=${page}&_author=true&_reactions=true&_comments=true`;
-  try {
-    const response = await fetch(API_SOCIAL_POSTS + queryParameters, {
-      method: "GET",
-      headers: headers(),
+    const queryParams = new URLSearchParams({   
+        _author: includeAuthor ? "true" : "false"
     });
 
-    if (response.ok) {
-      const data = await response.json();
+    const response = await authFetch(`${API_SOCIAL_POSTS}/${id}?${queryParams.toString()}`);
 
-      const userPosts = data.data;
-
-      return userPosts;
-    }
-  } catch (error) {
-    console.log(error);
-    alert("something went wrong trying to fetch user posts");
-  }
+    const post = await response.json();
+    return post.data;
 }
 
-
-export async function readPostsByUser(username, limit = 12, page = 1) {
-  const queryParameters = `?limit=${limit}&page=${page}&_author=true&_reactions=true&_comments=true`;
-  try {
-    const response = await fetch(API_SOCIAL_POSTS + queryParameters, {
-      method: "GET",
-      headers: headers(),
+export async function readPosts(limit = 12, page = 1, tag, includeAuthor = true) {
+    const queryParams = new URLSearchParams({
+        limit: limit,     
+        page: page,     
+        _author: includeAuthor ? "true" : "false"
     });
 
-    if (response.ok) {
-      const data = await response.json();
-
-      const userPosts = data.data;
-
-      console.log(userPosts);
-      const test = userPosts.filter((post) => {
-        return post.author.name === username;
-      });
-
-      console.log("test:", test);
-
-      return test;
+    if (tag) {
+        queryParams.append("tag", tag);
     }
-  } catch (error) {
-    console.log(error);
-    alert("something went wrong trying to fetch user posts");
-  }
+
+    const response = await authFetch(`${API_SOCIAL_POSTS}?${queryParams.toString()}`);
+
+    const result = await response.json();
+    const posts = result.data;
+   
+    const sortedPosts = posts.sort((a, b) => new Date(b.created) - new Date(a.created));
+    return sortedPosts;
+ 
+}
+
+export async function readPostsByUser(username, limit = 12, page = 1, tag, includeAuthor = true) {
+    const queryParams = new URLSearchParams({
+        limit: limit,     
+        page: page,     
+        _author: includeAuthor ? "true" : "false"
+    });
+
+    if (tag) {
+        queryParams.append("tag", tag);
+    }
+
+    const response = await authFetch(`${API_SOCIAL_PROFILES}/${username}/posts?${queryParams.toString()}`);
+
+    const result = await response.json();
+    const posts = result.data;
+   
+    const sortedPosts = posts.sort((a, b) => new Date(b.created) - new Date(a.created));
+    return sortedPosts;
 }

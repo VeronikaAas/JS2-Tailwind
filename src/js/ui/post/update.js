@@ -1,22 +1,24 @@
 import { updatePost } from "../../api/post/update";
+import { findPostID } from "../../utilities/findPostID";
+import { setMediaObject, stringToArray } from "../../utilities/extra";
 
 export async function onUpdatePost(event) {
-  event.preventDefault();
-  const id = JSON.parse(localStorage.getItem("postID"));
-
-  const formData = new FormData(event.target);
-
-  const media = {
-    url: formData.get("url"),
-    alt: formData.get("alt"),
-  };
-
-  const EditPostData = {
-    title: formData.get("title"),
-    body: formData.get("text"),
-    tags: formData.get("tags").split(" "),
-    media: media,
-  };
-
-  updatePost(id, EditPostData);
+    event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const formValues = Object.fromEntries(formData.entries());
+  
+       const tagsAsArray = stringToArray(formValues.tags);
+       const mediaAsObject = setMediaObject(formValues.mediaURL, formValues.mediaALT);
+    
+       const id = findPostID();
+      
+       const postData = {
+          title: formValues.title,
+          media: mediaAsObject,
+          body: formValues.body,
+          tags: tagsAsArray
+      }
+  
+    updatePost(id, postData); 
 }

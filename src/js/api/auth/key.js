@@ -1,22 +1,24 @@
-import { API_KEY } from '../constants.js'; 
+import { API_AUTH_KEY } from "../constants";
+import { headers } from "../headers";
 
-fetch('https://v2.api.noroff.dev/social/posts/verothero', {
-  method: 'GET',
-  headers: {
-    'Authorization': `Bearer ${accessToken}`, 
-    'X-Noroff-API-Key': API_KEY, 
-    'Content-Type': 'application/json'
+export async function getKey() {
+  const body = {
+    name: "Gymsta",
+  };
+  try {
+    const response = await fetch(API_AUTH_KEY, {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify(body),
+    });
+
+    if (response.ok) {
+      const key = await response.json();
+      console.log(key);
+      localStorage.setItem("API KEY", JSON.stringify(key));
+    }
+  } catch (error) {
+    console.log(error);
+    alert("something went wrong trying to get apiKey");
   }
-})
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Nettverksrespons var ikke ok');
-  }
-  return response.json();
-})
-.then(data => {
-  console.log('Suksess:', data);
-})
-.catch(error => {
-  console.error('Det oppstod en feil:', error);
-});
+}

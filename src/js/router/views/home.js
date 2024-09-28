@@ -1,14 +1,11 @@
-import { readPosts } from "../../api/post/read";
-import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
+import { renderPosts } from "../../ui/post/read";
+import { setLogoutListener } from "../../ui/global/logout";
 
 authGuard();
-setLogoutListener();
 
-const readHomePagePosts = async () => {
-  const posts = await readPosts();
-  console.log("All posts: ", posts);
+document.addEventListener('DOMContentLoaded', () => {
+  setLogoutListener();
+});
 
-};
-
-readHomePagePosts();
+renderPosts();

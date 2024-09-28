@@ -1,27 +1,26 @@
 import { createPost } from "../../api/post/create";
+import { setMediaObject, stringToArray } from "../../utilities/extra"
+import { displayMessage } from "../global/displayMessage";
 
 export async function onCreatePost(event) {
-  event.preventDefault();
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const formValues = Object.fromEntries(formData.entries());
 
-  const formData = new FormData(event.target);
+    const tagsAsArray = stringToArray(formValues.tags);
+    const mediaAsObject = setMediaObject(formValues.mediaURL, formValues.mediaALT);
+   
+    const postData = {
+       title: formValues.title,
+       media: mediaAsObject,
+       body: formValues.body,
+       tags: tagsAsArray
+   }
 
-  const media = {
-    url: formData.get("url"),
-    alt: formData.get("alt"),
-  };
-
-  const createPostData = {
-    title: formData.get("title"),
-    body: formData.get("text"),
-    tags: formData.get("tags").split(" "),
-    media: media,
-  };
-
-  console.log("Data to send:", createPostData);
-
-  try {
-    await createPost(createPostData);
-  } catch (error) {
-    console.error("Failed to create post:", error);
-  }
+    try {
+        await createPost(postData); 
+    } catch (error) {
+        displayMessage(error.message, "error");
+    }
 }

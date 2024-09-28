@@ -1,9 +1,10 @@
-import { onLogout } from "../auth/logout";
+import { remove } from "../../api/storage/remove";
 
 export function setLogoutListener() {
-  const logoutButton = document.querySelectorAll(".logout");
-
-  logoutButton.forEach((button) => {
-    button.addEventListener("click", onLogout);
-  });
+    const logoutButton = document.getElementById("logout");
+    logoutButton.addEventListener("click", () => {
+        remove("token");
+        remove("profile");
+        window.location.href="auth/login/index";
+    })
 }

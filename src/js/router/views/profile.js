@@ -1,7 +1,7 @@
 import { readPostsByUser } from "../../api/post/read";
 import { readProfile } from "../../api/profile/read";
 import { setLogoutListener } from "../../ui/global/logout";
-import { makePost } from "../../ui/post/makePost";
+import { makePost } from "../../ui/post/read";
 import { onUpdateProfile } from "../../ui/profile/update";
 import { authGuard } from "../../utilities/authGuard";
 
@@ -14,10 +14,32 @@ authGuard();
 setLogoutListener();
 
 const readProfileInfo = async () => {
-  const username = JSON.parse(localStorage.getItem("userInfo"));
-  const data = await readProfile(username.name);
-  const userPosts = await readPostsByUser(username.name);
-  console.log(data);
+  const storedUserInfo = localStorage.getItem("userInfo");
+
+  // Sjekk om det er lagret brukerinfo
+  //if (!storedUserInfo) {
+    //console.error("No user info found in localStorage.");
+    //return; // Stopp videre utførelse hvis ingen bruker er lagret
+  //}
+
+  const username = JSON.parse(storedUserInfo);
+
+  // Sjekk om username faktisk inneholder name-feltet
+  //if (!username || !username.name) {
+    //console.error("Invalid user info in localStorage.");
+    //return; // Stopp hvis userInfo ikke inneholder navn
+  //}
+
+  // Nå er vi sikre på at username.name eksisterer
+  console.log("Fetching profile for:", username.name);
+
+  try {
+    const data = await readProfile(username.name);
+    const userPosts = await readPostsByUser(username.name);
+    console.log(data);
+  } catch {
+
+    }
 
   const bannerDiv = document.getElementById("profileBanner");
   const profileImageDiv = document.getElementById("profileImage");
