@@ -1,7 +1,7 @@
 // Funksjon for å fjerne brukerdata fra localStorage og omdirigere til innloggingssiden
 function logout() {
   // Fjerner brukerdata fra localStorage
-  localStorage.removeItem("userinfo");
+  localStorage.removeItem("profile");
   localStorage.removeItem("token");
 
   // Vis en bekreftelsesmelding

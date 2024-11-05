@@ -1,3 +1,3 @@
-export function remove(key) {
-    localStorage.removeItem(key);
+export function remove(key, profile) {
+    localStorage.removeItem(key, profile);
 }
