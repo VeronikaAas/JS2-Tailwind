@@ -11,16 +11,20 @@
   </head>
 
   <body>
-    <main>
-      <section class="bg-green-300 text-4xl font-mono">
-        <h1>What's on your heart?</h1>
-    </section>
-
-      <nav class="bg-orange-600">
-        <a href="/">Home</a>
-        <a href="/profile/">Profile</a>
-        <a href="/post/create/">Create Post</a>
-        <button id="logoutButton">Log Out</button>
+    <main class="min-h-screen bg-gradient-to-b from-green-200 to-green-300 flex flex-col items-center">
+      <!-- Main Heading Section -->
+      <section class="w-full text-center py-10">
+        <h1 class="text-4xl font-bold font-mono text-green-900">What's on your heart?</h1>
+      </section>
+    
+      <!-- Navbar Section -->
+      <nav class="w-full bg-orange-600 text-white shadow-md">
+        <div class="container mx-auto flex justify-around py-4 text-lg">
+          <a href="/" class="hover:text-yellow-300 transition">Home</a>
+          <a href="/profile/" class="hover:text-yellow-300 transition">Profile</a>
+          <a href="/post/create/" class="hover:text-yellow-300 transition">Create Post</a>
+          <button id="logoutButton" class="text-lg font-semibold hover:text-yellow-300 transition">Log Out</button>
+        </div>
       </nav>
 
       <div id="posts-container">
