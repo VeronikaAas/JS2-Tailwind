@@ -12,8 +12,9 @@ export function postsTemplate(posts) {
             "shadow-lg", 
             "p-6", 
             "mb-6", 
-            "dark:bg-gray-800",
-            "max-w-3xl"
+            "dark:bg-teal-950",
+            "max-w-3xl",
+            
         );
 
         // Clickable thumbnail or link to the full post
