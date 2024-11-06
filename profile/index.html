@@ -2,78 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Log in user</title>
     <script type="module" src="/src/app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body class="flex flex-col items-center">
-    <main>
-      <h1>Edit your profile</h1>
 
-      <nav>
-        <a href="/">Home</a>
-        <a href="/profile/">Profile</a>
-        <a href="/post/create/">Create Post</a>
-        <button class="logout">Log Out</button>
+  <body class="bg-teal-100 flex flex-col items-center min-h-screen">
+    <!-- Navbar Section --> 
+    <header class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 fixed top-0 left-0">
+      <nav class="container mx-auto flex justify-around py-4 text-lg">
+        <a href="/" class="hover:text-teal-500 transition">Home</a>
+        <a href="/profile/" class="hover:text-teal-500 transition">Profile</a>
+        <a href="/post/create/" class="hover:text-teal-500 transition">Create Post</a>
+        <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition">Log Out</button>
       </nav>
-
-      <div class="max-h-400 w-100 position-relative overflow-hidden">
-        <div id="profileBanner"></div>
+    </header>
+    
+    <div class="max-w-7xl mx-auto p-6">
+      <!-- Profile Banner -->
+      <div class="max-h-400 w-full relative overflow-hidden mb-6">
+        <div id="profileBanner" class="w-full h-full bg-gray-300 rounded-lg"></div>
       </div>
 
-      <div class="flex w-100 gap-10">
-        <div id="profileImage" class="profileImage"></div>
-        <div class="w-100">
-          <div class="flex justify-between w-100 items-center">
-            <div id="username" class="text-left"></div>
-            <details>
-              <summary class="cursor">Update Profile</summary>
-              <div class="flex flex-col updateProfile">
-                <form name="updateProfile">
+      <div class="flex flex-col md:flex-row gap-10">
+        <!-- Profile Image and Information -->
+        <div id="profileImage" class="w-32 h-32 md:w-40 md:h-40 bg-gray-300 rounded-full overflow-hidden mb-6 md:mb-0">
+          <!-- Placeholder for profile image -->
+        </div>
+        
+        <div class="w-full">
+          <div class="flex justify-between items-center mb-6">
+            <div id="username" class="text-left text-2xl font-semibold text-teal-950 dark:text-teal-950"></div>
+            
+            <!-- Profile Update Section -->
+            <details class="cursor-pointer">
+              <summary class="text-teal-950 dark:text-teal-950">Update Profile</summary>
+              <div class="flex flex-col gap-4 mt-4">
+                <form name="updateProfile" class="bg-teal-950 p-6 rounded-lg">
+
+                  <!-- Profile Picture -->
                   <div>
-                    <p>Profile Picture</p>
-                    <div>
-                      <label for="url">url</label>
-                      <input type="url" name="avatarUrl" />
+                    <p class="text-sm font-medium text-emerald-100 dark:text-emerald-100">Profile Picture</p>
+                    <div class="mt-2">
+                      <label class="block text-sm text-emerald-100 dark:text-emerald-100" for="avatarUrl">URL</label>
+                      <input class="w-full p-2 mt-2 border rounded-lg bg-white dark:bg-teal-950 dark:text-white" type="url" name="avatarUrl" />
                     </div>
-                    <div>
-                      <label for="alt">alt</label>
-                      <input type="text" name="avatarAlt" />
+                    <div class="mt-2">
+                      <label class="block text-sm text-emerald-100 dark:text-emerald-100" for="avatarAlt">Alt Text</label>
+                      <input class="w-full p-2 mt-2 border rounded-lg bg-white dark:bg-teal-950 dark:text-white" type="text" name="avatarAlt" />
                     </div>
                   </div>
-
-                  <div>
-                    <p>Cover Picture</p>
-                    <div>
-                      <label for="url">url</label>
-                      <input type="url" name="bannerUrl" />
+    
+                  <!-- Cover Picture -->
+                  <div class="mt-6">
+                    <p class="text-sm font-medium text-emerald-100 dark:text-emerald-100">Cover Picture</p>
+                    <div class="mt-2">
+                      <label class="block text-sm text-emerald-100 dark:text-emerald-100" for="bannerUrl">URL</label>
+                      <input class="w-full p-2 mt-2 border rounded-lg bg-white dark:bg-teal-950 dark:text-white" type="url" name="bannerUrl" />
                     </div>
-
-                    <div>
-                      <label for="alt">alt</label>
-                      <input type="text" name="bannerAlt" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <p>Bio</p>
-                    <div>
-                      <label for="bio"></label>
-                      <textarea type="text" name="bio"></textarea>
+                    <div class="mt-2">
+                      <label class="block text-sm text-emerald-100 dark:text-emerald-100" for="bannerAlt">Alt Text</label>
+                      <input class="w-full p-2 mt-2 border rounded-lg bg-white dark:bg-teal-950 dark:text-white" type="text" name="bannerAlt" />
                     </div>
                   </div>
-
-                  <button>Update Profile</button>
+    
+                  <!-- Bio -->
+                  <div class="mt-6">
+                    <p class="text-sm font-medium text-emerald-100 dark:text-emerald-100">Bio</p>
+                    <div class="mt-2">
+                      <textarea class="w-full p-2 mt-2 border rounded-lg bg-white dark:bg-teal-950 dark:text-white" name="bio" placeholder="Write a short bio..."></textarea>
+                    </div>
+                  </div>
+    
+                  <!-- Update Button -->
+                  <div class="mt-6">
+                    <button class="w-full p-2 mt-2 border rounded-lg bg-teal-950 text-white rounded-lg hover:bg-teal-800 focus:outline-none">
+                      Update Profile
+                    </button>
+                  </div>
                 </form>
               </div>
             </details>
           </div>
-          <div id="bio"></div>
+    
+          <!-- Bio Display -->
+          <div id="bio" class="text-gray-700 dark:text-gray-200"></div>
         </div>
       </div>
-
-      <div id="userPosts" class="userPosts"></div>
-    </main>
+    
+      <!-- User Posts Section -->
+      <div id="userPosts" class="userPosts mt-10"></div>
+    </div>
   </body>
 </html>
