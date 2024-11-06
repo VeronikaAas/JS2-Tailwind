@@ -25,13 +25,13 @@ export function postsTemplate(posts) {
         // Author name
         const user = document.createElement("p");
         user.innerText = `Posted by: ${post.author.name}`;
-        user.classList.add("text-sm", "text-gray-600", "dark:text-gray-300", "mb-2");
+        user.classList.add("text-sm", "text-emerald-100", "dark:text-emerald-100", "mb-2");
         clickableThumbnail.appendChild(user);
 
         // Post title
         const title = document.createElement("h2");
         title.innerText = post.title;
-        title.classList.add("text-xl", "font-semibold", "text-gray-800", "dark:text-white", "mb-2");
+        title.classList.add("text-xl", "font-semibold", "text-white", "dark:text-white", "mb-2");
         clickableThumbnail.appendChild(title);
 
         // Media (if any)
@@ -57,7 +57,7 @@ export function postsTemplate(posts) {
         // Tags
         const tags = document.createElement("p");
         tags.innerText = post.tags;
-        tags.classList.add("text-sm", "text-gray-500", "dark:text-gray-400", "mb-4");
+        tags.classList.add("text-sm", "text-emerald-100","dark:text-emerald-100", "mb-4");
         clickableThumbnail.appendChild(tags);
 
         // Add all elements to the post element
