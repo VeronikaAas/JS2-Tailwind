@@ -46,6 +46,7 @@ export function postsTemplate(posts) {
             
             mediaContainer.appendChild(media);
             clickableThumbnail.appendChild(mediaContainer);
+
         }
 
         // Post body
