@@ -7,12 +7,12 @@ export function postsTemplate(posts) {
         const postElement = document.createElement("div");
         postElement.classList.add(
             "post-element", 
-            "bg-white", 
+            "bg-teal-950", 
             "rounded-lg", 
             "shadow-lg", 
             "p-6", 
             "mb-6", 
-            "dark:bg-teal-950",
+            "dark:bg-neutral-800",
             "max-w-3xl",
             
         );
@@ -25,7 +25,7 @@ export function postsTemplate(posts) {
         // Author name
         const user = document.createElement("p");
         user.innerText = `Posted by: ${post.author.name}`;
-        user.classList.add("text-sm", "text-emerald-100", "dark:text-emerald-100", "mb-2");
+        user.classList.add("text-sm", "text-emerald-100", "dark:text-gray-200", "mb-2");
         clickableThumbnail.appendChild(user);
 
         // Post title
@@ -52,13 +52,13 @@ export function postsTemplate(posts) {
         // Post body
         const body = document.createElement("p");
         body.innerText = post.body;
-        body.classList.add("text-gray-700", "dark:text-gray-200", "mb-4");
+        body.classList.add("text-white", "dark:text-gray-200", "mb-4");
         clickableThumbnail.appendChild(body);
 
         // Tags
         const tags = document.createElement("p");
         tags.innerText = post.tags;
-        tags.classList.add("text-sm", "text-emerald-100","dark:text-emerald-100", "mb-4");
+        tags.classList.add("text-sm", "text-emerald-100","dark:text-gray-200", "mb-4");
         clickableThumbnail.appendChild(tags);
 
         // Add all elements to the post element

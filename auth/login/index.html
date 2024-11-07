@@ -8,45 +8,48 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
 
-  <body class="bg-teal-100 flex flex-col items-center min-h-screen">
-    <!-- Navbar Section --> 
-    <header class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 fixed top-0 left-0">
-      <nav class="container mx-auto flex justify-around py-4 text-lg">
-        <a href="/" class="hover:text-teal-500 transition">Home</a>
+  <body class="bg-teal-100 dark:bg-black flex flex-col min-h-screen">
+  
+    <nav class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 dark:bg-neutral-800 dark:text-gray-200">
+        <div class="container mx-auto flex justify-around py-4 text-lg">
+          <a href="/" class="hover:text-teal-500 transition p-2">Home</a>
+          <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
+            Light/Dark mode
+          </button>
+        </div>
       </nav>
-    </header>
 
     <main class="flex-grow flex items-center justify-center mt-24">
       <form id="login" 
-        class="w-full max-w-lg md:w-3/4 lg:w-1/2 bg-teal-100 dark:bg-teal-950 shadow-2xl rounded-2xl overflow-hidden border-4 border-teal-950 dark:border-teal-950 mx-auto">
+        class="w-full max-w-lg md:w-3/4 lg:w-1/2 bg-teal-950 dark:bg-black shadow-2xl rounded-2xl overflow-hidden border-4 border-teal-950 dark:border-teal-950 mx-auto">
         <div class="px-8 py-10 md:px-10">
-          <h2 class="text-4xl font-extrabold text-center text-teal-950 dark:text-white">Welcome Back!</h2>
-          <p class="text-center text-teal-950 dark:text-white mt-3">We missed you, sign in to continue.</p>
+          <h2 class="text-4xl font-extrabold text-center text-emerald-100 dark:text-gray-200">Welcome Back!</h2>
+          <p class="text-center text-emerald-100 dark:text-gray-200 mt-3">We missed you, sign in to continue.</p>
           <div class="mt-10">
             <div class="relative">
-              <label class="block mb-3 text-sm font-medium text-teal-950 dark:text-white" for="email">Email</label>
+              <label class="block mb-3 text-sm font-medium text-emerald-100 dark:text-gray-200" for="email">Email</label>
               <input placeholder="you@example.com"
-                class="block w-full px-4 py-3 mt-2 text-teal-950 bg-white border-2 rounded-lg dark:border-white dark:bg-teal-950 dark:text-white focus:border-teal-100 dark:focus:border-teal-950 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-teal-950"
+                class="block w-full px-4 py-3 mt-2 text-teal-950 bg-white border-2 rounded-lg  dark:bg-neutral-800 dark:text-gray-200"
                 name="email" id="email" type="email" />
             </div>
             <div class="mt-6">
-              <label class="block mb-3 text-sm font-medium text-teal-950 dark:text-white" for="password">Password</label>
+              <label class="block mb-3 text-sm font-medium text-emerald-100 dark:text-gray-200" for="password">Password</label>
               <input placeholder="••••••••"
-                class="block w-full px-4 py-3 mt-2 text-teal-950 bg-white border-2 rounded-lg dark:border-white dark:bg-teal-950 dark:text-white focus:border-teal-100 dark:focus:border-teal-950 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-teal-950"
+                class="block w-full px-4 py-3 mt-2 text-teal-950 bg-white border-2 rounded-lg dark:bg-neutral-800 dark:text-gray-200"
                 name="password" id="password" type="password" />
             </div>
             <div class="mt-10">
               <button
-                class="w-full px-4 py-3 tracking-wide text-teal-950 bg-white rounded-lg hover:from-teal-100 hover:to-teal-500 focus:outline-none focus:ring-4 focus:ring-white dark:focus:ring-white"
+                class="w-full px-4 py-3 tracking-wide text-emerald-100 bg-teal-950 border-2 rounded-lg dark:bg-neutral-800 dark:text-gray-200"
                 type="submit">
                 Let's Go
               </button>
             </div>
           </div>
         </div>
-        <div class="px-8 py-4 bg-teal-950 dark:text-white">
-          <div class="text-sm text-white dark:text-white text-center">
-            Don't have an account? <a class="font-medium underline" href="../register/index.html">Sign up</a>
+        <div class="px-8 py-4 bg-teal-950 text-emerald-100 dark:text-gray-200 dark:bg-neutral-800">
+          <div class="text-sm text-emerald-100 dark:text-gray-200 text-center">
+            Don't have an account? <a class="font-medium underline" href="/auth/register/index.html">Sign up</a>
           </div>
         </div>
       </form>

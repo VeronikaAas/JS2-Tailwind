@@ -4,17 +4,51 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Spill your heart out</title>
+    <link rel="stylesheet" href="/style.css">
     <script type="module" src="/src/app.js"></script>
+    <script type="module" src="./src/js/ui/auth/logout.js"></script>
   </head>
+
   <body>
-    <h1>Posts</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/profile/">Profile</a>
-      <a href="/post/create/">Create Post</a>
-      <button class="logout">Log Out</button>
-    </nav>
+    <header class="min-h-screen bg-emerald-100 dark:bg-black dark:text-gray-200 flex flex-col items-center">
+      <!-- Main Heading Section -->
+      <section class="w-full text-center py-10">
+        <h1 class="text-4xl font-bold font-mono text-teal-950 dark:bg-black dark:text-gray-200">What's on your heart?</h1>
+      </section>
+    
+      <!-- Navbar Section --> 
+      <nav class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 m-5 dark:bg-neutral-800 dark:text-gray-200">
+        <div class="container mx-auto flex justify-around py-4 text-lg">
+          <a href="/" class="hover:text-teal-500 transition p-2">Home</a>
+          <a href="/profile/" class="hover:text-teal-500 transition p-2">Profile</a>
+          <a href="/post/create/" class="hover:text-teal-500 transition p-2">Create Post</a>
+          <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition p-2">Log Out</button>
+          <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
+            Light/Dark mode
+          </button>
+          
+        </div>
+      </nav>
+    <main class="min-h-screen bg-emerald-100 dark:bg-black dark:text-gray-200 flex flex-col items-center">
+      <!-- Main Heading Section -->
+      <section class="w-full text-center py-10">
+        <h1 class="text-4xl font-bold font-mono text-teal-950 dark:bg-black dark:text-gray-200">What's on your heart?</h1>
+      </section>
+    
+      <!-- Navbar Section --> 
+      <nav class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 m-5 dark:bg-neutral-800 dark:text-gray-200">
+        <div class="container mx-auto flex justify-around py-4 text-lg">
+          <a href="/" class="hover:text-teal-500 transition p-2">Home</a>
+          <a href="/profile/" class="hover:text-teal-500 transition p-2">Profile</a>
+          <a href="/post/create/" class="hover:text-teal-500 transition p-2">Create Post</a>
+          <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition p-2">Log Out</button>
+          <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
+            Light/Dark mode
+          </button>
+          
+        </div>
+      </nav>
     <h1>Single post Page</h1>
     <div id="post-container"></div>
   </body>
