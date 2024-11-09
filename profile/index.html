@@ -50,40 +50,61 @@
       </div>
 
       <!-- Update Profile Section -->
-      <details class="mt-10 bg-teal-950 dark:bg-neutral-800 p-6 rounded-lg">
-        <summary class="text-emerald-100 font-bold cursor-pointer">Update Profile</summary>
-        <form name="updateProfile" class="mt-4 space-y-6">
-          <!-- Profile Picture URL -->
-          <div>
-            <label for="avatarUrl" class="block text-sm font-medium text-emerald-100">Profile Picture URL</label>
-            <input type="url" id="avatarUrl" name="avatarUrl" class="w-full p-2 mt-2 bg-white dark:bg-teal-950 dark:text-white rounded-lg">
-          </div>
-          <!-- Cover Picture URL -->
-          <div>
-            <label for="bannerUrl" class="block text-sm font-medium text-emerald-100">Cover Picture URL</label>
-            <input type="url" id="bannerUrl" name="bannerUrl" class="w-full p-2 mt-2 bg-white dark:bg-teal-950 dark:text-white rounded-lg">
-          </div>
-          <!-- Bio -->
-          <div>
-            <label for="bio" class="block text-sm font-medium text-emerald-100">Bio</label>
-            <textarea id="bio" name="bio" rows="3" class="w-full p-2 mt-2 bg-white dark:bg-teal-950 dark:text-white rounded-lg"></textarea>
-          </div>
-          <!-- Submit Button -->
-          <button type="submit" class="w-full px-4 py-3 tracking-wide text-emerald-100 bg-teal-950 border-2 rounded-lg dark:bg-neutral-800 dark:text-gray-200">Update Profile</button>
-        </form>
-      </details>
+<details class="mt-10 bg-teal-950 dark:bg-neutral-800 p-6 rounded-lg">
+  <summary class="text-emerald-100 dark:text-gray-200 font-bold cursor-pointer">Update Profile</summary>
+  <form name="updateProfile" class="mt-4 space-y-6">
+    <!-- Profile Picture URL -->
+    <div>
+      <label for="avatarUrl" class="block text-sm font-medium text-emerald-100 dark:text-gray-200">Profile Picture URL</label>
+      <input 
+        type="url" 
+        id="avatarUrl" 
+        name="avatarUrl" 
+        class="w-full p-2 mt-2 bg-white text-black rounded-lg dark:bg-white dark:text-black"
+      >
+    </div>
+    <!-- Cover Picture URL -->
+    <div>
+      <label for="bannerUrl" class="block text-sm font-medium text-emerald-100 dark:text-gray-200">Cover Picture URL</label>
+      <input 
+        type="url" 
+        id="bannerUrl" 
+        name="bannerUrl" 
+        class="w-full p-2 mt-2 bg-white text-black rounded-lg dark:bg-white dark:text-black"
+      >
+    </div>
+    <!-- Bio -->
+    <div>
+      <label for="bio" class="block text-sm font-medium text-emerald-100 dark:text-gray-200">Bio</label>
+      <textarea 
+        id="bio" 
+        name="bio" 
+        rows="3" 
+        class="w-full p-2 mt-2 bg-white text-black rounded-lg dark:bg-white dark:text-black"
+      ></textarea>
+    </div>
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      class="w-full px-4 py-3 tracking-wide text-emerald-100 bg-teal-950 border-2 rounded-lg dark:bg-neutral-800 dark:text-gray-200"
+    >
+      Update Profile
+    </button>
+  </form>
+</details>
 
-      <!-- User Posts Section -->
-      <section id="userPosts" class="mt-12">
-        <h3 class="text-2xl font-bold text-teal-950 dark:text-gray-200 mb-6">Your Posts</h3>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div class="p-4 bg-teal-950 dark:bg-black shadow-md rounded-lg">
-            <h4 class="font-bold text-lg text-teal-100 dark:text-gray-100">Post Title</h4>
-            <p class="mt-2 text-teal-100 dark:text-gray-100">Lorem ipsum dolor sit amet...</p>
-          </div>
-          <!-- Add more post cards here -->
-        </div>
-      </section>
+<!-- User Posts Section -->
+<section id="userPosts" class="mt-12">
+  <h3 class="text-2xl font-bold text-teal-950 dark:text-gray-200 mb-6">Your Posts</h3>
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="p-4 bg-teal-950 dark:bg-neutral-800 shadow-md rounded-lg">
+      <h4 class="font-bold text-lg text-teal-100 dark:text-gray-200">Post Title</h4>
+      <p class="mt-2 text-teal-100 dark:text-gray-200">Lorem ipsum dolor sit amet...</p>
+    </div>
+    <!-- Add more post cards here -->
+  </div>
+</section>
+
     </main>
   </body>
 </html>
