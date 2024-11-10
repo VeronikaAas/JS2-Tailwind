@@ -11,17 +11,20 @@
   <body class="bg-white dark:bg-black dark:text-gray-200 min-h-screen">
     <!-- Header Section -->
     <header class="w-full bg-teal-950 text-emerald-100 dark:bg-neutral-800 shadow-md">
-      <nav class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 dark:bg-neutral-800 dark:text-gray-200">
-        <div class="container mx-auto flex justify-around py-4 text-lg">
-          <a href="/" class="hover:text-teal-500 transition p-2">Home</a>
-          <a href="/profile/" class="hover:text-teal-500 transition p-2">Profile</a>
-          <a href="/post/create/" class="hover:text-teal-500 transition p-2">Create Post</a>
-          <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition p-2">Log Out</button>
-          <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
-            Light/Dark mode
-          </button>
-        </div>
-      </nav>
+      <!-- Navbar Section -->
+      <div class="w-full flex flex-wrap gap-4 justify-center items-center mt-4 sm:mt-0 p-2 bg-teal-950 dark:bg-neutral-800 text-teal-100 dark:text-white">
+        <a href="/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Home</a>
+        <a href="/profile/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Profile</a>
+        <a href="/post/create/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Create Post</a>
+        <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition py-1 px-2 sm:px-4">
+          Log Out
+        </button>
+        <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
+          Light/Dark Mode
+        </button>
+      </div>
+    </div>
+  </nav>
     </header>
 
     <main class="container mx-auto p-6">

@@ -14,6 +14,7 @@ export function postsTemplate(posts) {
             "mb-6", 
             "dark:bg-neutral-800",
             "max-w-3xl",
+            "break-words"
             
         );
 
@@ -25,7 +26,7 @@ export function postsTemplate(posts) {
         // Author name
         const user = document.createElement("p");
         user.innerText = `Posted by: ${post.author.name}`;
-        user.classList.add("text-sm", "text-emerald-100", "dark:text-gray-200", "mb-2");
+        user.classList.add("text-sm", "text-emerald-100", "dark:text-white", "mb-2");
         clickableThumbnail.appendChild(user);
 
         // Post title
@@ -52,13 +53,13 @@ export function postsTemplate(posts) {
         // Post body
         const body = document.createElement("p");
         body.innerText = post.body;
-        body.classList.add("text-white", "dark:text-gray-200", "mb-4");
+        body.classList.add("text-white", "dark:text-white", "mb-4");
         clickableThumbnail.appendChild(body);
 
         // Tags
         const tags = document.createElement("p");
         tags.innerText = post.tags;
-        tags.classList.add("text-sm", "text-emerald-100","dark:text-gray-200", "mb-4");
+        tags.classList.add("text-sm", "text-emerald-100","dark:text-white", "mb-4");
         clickableThumbnail.appendChild(tags);
 
         // Add all elements to the post element

@@ -12,11 +12,12 @@ export const appendEditLink = (post, author) => {
 
         // Add Tailwind CSS classes for styling
         editLink.classList.add(
-            "text-teal-100",            // Teal text color
-            "hover:text-teal-600",      // Darker color on hover
-            "px-4", "py-2",             // Padding for clickable area
-            "rounded-md",               // Rounded corners
-            "focus:outline-none",       // Remove default focus outline
+            "text-teal-100",            
+            "hover:text-teal-600",      
+            "px-4", "py-2",             
+            "rounded-md",               
+            "focus:outline-none", 
+            "dark:text-white"      
         );
 
         return editLink;

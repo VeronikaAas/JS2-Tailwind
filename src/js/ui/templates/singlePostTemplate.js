@@ -6,26 +6,27 @@ export function singlePostTemplate(post) {
     const postElement = document.createElement("div");
     postElement.classList.add(
         "post-element",
-        "bg-white", 
+        "bg-teal-950", 
         "rounded-lg", 
         "shadow-lg", 
         "p-6", 
-        "dark:bg-gray-800", 
-        "max-w-2xl", 
+        "dark:bg-neutral-800", 
+        "max-w-3xl", 
         "mx-auto", 
-        "my-10"
+        "my-10", 
+        "break-words"
     );
 
     // Author info
     const user = document.createElement("p");
     user.innerText = `Posted by: ${post.author.name}`;
-    user.classList.add("text-sm", "text-gray-600", "dark:text-gray-300", "mb-4");
+    user.classList.add("text-sm", "text-emerald-100", "dark:text-white", "mb-4");
     postElement.appendChild(user);
 
     // Post title
     const title = document.createElement("h2");
     title.innerText = post.title;
-    title.classList.add("text-2xl", "font-bold", "text-gray-800", "dark:text-white", "mb-4");
+    title.classList.add("text-2xl", "font-bold", "text-white", "dark:text-white", "mb-4");
     postElement.appendChild(title);
 
     // Media (if any)
@@ -45,13 +46,13 @@ export function singlePostTemplate(post) {
     // Post body
     const body = document.createElement("p");
     body.innerText = post.body;
-    body.classList.add("text-gray-700", "dark:text-gray-200", "mb-4");
+    body.classList.add("text-white", "dark:text-white", "mb-4");
     postElement.appendChild(body);
 
     // Tags
     const tags = document.createElement("p");
     tags.innerText = post.tags;
-    tags.classList.add("text-sm", "text-gray-500", "dark:text-gray-400", "mb-4");
+    tags.classList.add("text-sm", "text-emerald-100", "dark:text-white", "mb-4");
     postElement.appendChild(tags);
 
     // Edit and Delete Buttons

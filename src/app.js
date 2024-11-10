@@ -32,3 +32,5 @@ themeToggle.addEventListener("click", () => {
         themeToggle.textContent = "Light mode"; // Endre knappeteksten
     }
 });
+
+

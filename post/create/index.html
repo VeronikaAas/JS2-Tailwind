@@ -12,17 +12,20 @@
 
   <body class= "dark:bg-black flex flex-col min-h-screen">
   
-    <nav class="w-full bg-teal-950 text-emerald-100 shadow-md p-2 dark:bg-neutral-800 dark:text-gray-200">
-      <div class="container mx-auto flex justify-around py-4 text-lg">
-        <a href="/" class="hover:text-teal-500 transition p-2">Home</a>
-        <a href="/profile/" class="hover:text-teal-500 transition p-2">Profile</a>
-        <a href="/post/create/" class="hover:text-teal-500 transition p-2">Create Post</a>
-        <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition p-2">Log Out</button>
-        <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
-          Light/Dark mode
-        </button>
-      </div>
-    </nav>
+    <!-- Navbar Section -->
+    <div class="w-full flex flex-wrap gap-4 justify-center items-center mt-4 sm:mt-0 p-2 bg-teal-950 dark:bg-neutral-800 text-teal-100 dark:text-white">
+      <a href="/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Home</a>
+      <a href="/profile/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Profile</a>
+      <a href="/post/create/" class="hover:text-teal-500 transition py-1 px-2 sm:px-4">Create Post</a>
+      <button id="logoutButton" class="text-lg font-semibold hover:text-teal-500 transition py-1 px-2 sm:px-4">
+        Log Out
+      </button>
+      <button id="theme-toggle" class="bg-emerald-100 dark:bg-neutral-600 text-black dark:text-white p-2 rounded">
+        Light/Dark Mode
+      </button>
+    </div>
+  </div>
+</nav>
     <main class="flex-grow flex items-center justify-center mt-24 w-full">
       <form name="createPost"
         class="w-4/5 max-w-screen-lg bg-teal-950 dark:bg-neutral-800 dark:text-neutral-200 shadow-2xl rounded-2xl overflow-hidden border-4 border-teal-950 dark:border-black mx-auto">
